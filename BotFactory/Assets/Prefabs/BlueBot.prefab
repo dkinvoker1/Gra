@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23042182052231490}
   - component: {fileID: 135219833612935542}
   m_Layer: 0
-  m_Name: Unit
+  m_Name: BlueBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

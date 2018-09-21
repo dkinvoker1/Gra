@@ -1,23 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MainBaseController : MonoBehaviour {
 
     public Transform SpawnPoint;
-    public GameObject Unit;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void SpawnUnit()
     {
-        Instantiate(Unit, SpawnPoint.position, SpawnPoint.rotation);
+        var UnitType = (Object)Resources.Load("Units/Unit");
+        GameObject Unit=(GameObject)Instantiate(UnitType, SpawnPoint.position, SpawnPoint.rotation);
+        var controler = (UnitController)Unit.GetComponent(typeof(UnitController));
+        controler.active = true;
     }
 }
